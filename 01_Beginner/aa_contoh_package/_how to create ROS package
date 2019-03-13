@@ -1,0 +1,20 @@
+- cara membuat package
+
+1. masuk ke directory dulu,
+	misal
+	cd $HOME/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/
+
+
+
+2. buat package, misalnya seperti ini
+	
+	catkin_create_pkg aa_contoh_package std_msgs roscpp rospy
+
+
+
+3. akan muncul directory nya menjadi
+	
+	$HOME/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/aa_contoh_package
+	
+4. nah di dalem nya sudah terbuat package ROS
+
