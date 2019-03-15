@@ -10,7 +10,7 @@ void obrolanCallback(const std_msgs::String::ConstPtr& msg) {
 
 int main(int argc, char **argv) {
 
-  ros::init(argc, argv, "sipenerima");
+  ros::init(argc, argv, "sipenerima");  // usahakan buat nama si remapping nya sesuai dengan nama file nya, karena supaya mudah memanggilnya, contoh ros::init(argc, argv, "penerima_subscriber");
 
   ros::NodeHandle n;
 

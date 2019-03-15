@@ -6,7 +6,7 @@
 int main(int argc, char **argv) {
 
   // initialize ROS, dengan remapping nama
-  ros::init(argc, argv, "sipengirim");
+  ros::init(argc, argv, "sipengirim");    // usahakan buat nama si remapping nya sesuai dengan nama file nya, karena supaya mudah memanggilnya, contoh ros::init(argc, argv, "pengirim_publisher");
 
   // jalur komunikasi utama dengan sistem ROS
   ros::NodeHandle n;
