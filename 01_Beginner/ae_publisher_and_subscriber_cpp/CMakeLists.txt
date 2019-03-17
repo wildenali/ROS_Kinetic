@@ -10,7 +10,6 @@ project(ae_publisher_and_subscriber_cpp)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-  genmsg
 )
 
 ## System dependencies are found with CMake's conventions
@@ -68,10 +67,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
- DEPENDENCIES
- std_msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -125,6 +124,22 @@ include_directories(
 #   src/${PROJECT_NAME}/ae_publisher_and_subscriber_cpp.cpp
 # )
 
+
+## ================================ TAMBAH ini ================================
+## Declare a cpp executable
+add_executable(si_publisher src/si_publisher.cpp)
+target_link_libraries(si_publisher ${catkin_LIBRARIES})
+add_dependencies(si_publisher 01_Beginner)
+## ================================ TAMBAH ini ================================
+
+## ================================ TAMBAH ini ================================
+add_executable(si_subscriber src/si_subscriber.cpp)
+target_link_libraries(si_subscriber ${catkin_LIBRARIES})
+add_dependencies(si_subscriber 01_Beginner)
+## ================================ TAMBAH ini ================================
+
+
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
@@ -134,11 +149,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/ae_publisher_and_subscriber_cpp_node.cpp)
-
-
-add_executable(sipengirim src/pengirim_publisher.cpp)
-add_executable(sipenerima src/penerima_subscriber.cpp)
-
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,20 +160,10 @@ add_executable(sipenerima src/penerima_subscriber.cpp)
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_dependencies(sipengirim ae_publisher_and_subscriber_cpp)
-add_dependencies(sipenerima ae_publisher_and_subscriber_cpp)
-
-
-
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
-target_link_libraries(sipengirim ${catkin_LIBRARIES})
-target_link_libraries(sipenerima ${catkin_LIBRARIES})
-
-
 
 #############
 ## Install ##
