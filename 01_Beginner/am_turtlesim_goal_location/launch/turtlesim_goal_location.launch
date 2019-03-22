@@ -1,0 +1,4 @@
+<launch>
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+  <node name="turtlesim_goal_location_node" pkg="am_turtlesim_goal_location" type="turtlesim_goal_location_node" output="screen"/>
+</launch>
