@@ -1,0 +1,4 @@
+<launch>
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+  <node name="turtlesim_rotate_node" pkg="al_turtlesim_basic_rotate" type="turtlesim_rotate_node" output="screen"/>
+</launch>
