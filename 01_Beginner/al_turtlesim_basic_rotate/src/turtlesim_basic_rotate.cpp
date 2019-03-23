@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "robot_basic_movement");
   ros::NodeHandle n;
 
-  velocity_publisher = n.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
+  velocity_publisher = n.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 100);
 
   // // ============================== ini untuk void rotate ==============================
   pose_subscriber = n.subscribe("/turtle1/pose", 10, poseCallback);
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
   // cin >> clockwise;
   // rotate(degrees2radians(angular_speed), degrees2radians(angle), clockwise);
 
-  ros::Rate loop_rate(0.1);
+  ros::Rate loop_rate(1000);
   setDesiredOrientation(degrees2radians(180));
   loop_rate.sleep();
   setDesiredOrientation(degrees2radians(0));
@@ -78,6 +78,9 @@ int main(int argc, char **argv) {
   setDesiredOrientation(degrees2radians(180));
   loop_rate.sleep();
   setDesiredOrientation(degrees2radians(0));
+  loop_rate.sleep();
+  setDesiredOrientation(degrees2radians(-90));
+  loop_rate.sleep();
   ros::spin();
   // // ============================== ini untuk void rotate ==============================
 
@@ -174,7 +177,10 @@ double setDesiredOrientation(double desired_angle_radians){
   double relative_angle_radians = desired_angle_radians - turtlesim_pose.theta;
   bool clockwise = ((relative_angle_radians < 0) ? true:false);
   // cout << desired_angle_radians << "," << turtlesim_pose.theta << "," << relative_angle_radians << "," << clockwise << endl;
-  rotate(abs(relative_angle_radians), abs(relative_angle_radians), clockwise);
+
+  // rotate(degrees2radians(relative_angle_radians), abs(relative_angle_radians), clockwise);
+  // atau ini yg bawah
+  rotate(degrees2radians(10), abs(relative_angle_radians), clockwise);
 }
 
 
