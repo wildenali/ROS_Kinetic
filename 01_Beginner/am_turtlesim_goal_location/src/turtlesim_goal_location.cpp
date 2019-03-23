@@ -185,7 +185,9 @@ double setDesiredOrientation(double desired_angle_radians){
   double relative_angle_radians = desired_angle_radians - turtlesim_pose.theta;
   bool clockwise = ((relative_angle_radians < 0) ? true:false);
   // cout << desired_angle_radians << "," << turtlesim_pose.theta << "," << relative_angle_radians << "," << clockwise << endl;
-  rotate(abs(relative_angle_radians), abs(relative_angle_radians), clockwise);
+  // rotate(degrees2radians(relative_angle_radians), abs(relative_angle_radians), clockwise);
+  // atau yg bawah ini
+  rotate(degrees2radians(10), abs(relative_angle_radians), clockwise);
 }
 
 
