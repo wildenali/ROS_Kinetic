@@ -1,0 +1,4 @@
+<launch>
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+  <node name="robot_ngepel_node" pkg="turtlesim_ngepel" type="robot_ngepel_node" output="screen"/>
+</launch>
