@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/password-admin/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/aa_contoh_package/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ab_roslaunch/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ac_contoh_msg/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ad_contoh_srv/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ae_publisher_and_subscriber_cpp/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ag_pus_sub_turtlesim_pose_and_move/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ah_iot_sub_pub_sample/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/aj_service_client_server_cpp/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ak_turtlesim_basic_movement_code/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/al_turtlesim_basic_rotate/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/am_turtlesim_goal_location/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/ar_ros_service_assignment/include",
+                "/home/password-admin/catkin_ws/src/beginner_tutorials/include",
+                "/home/password-admin/catkin_ws/src/ROS_Kinetic_Basics/01_Beginner/turtlesim_ngepel/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
