@@ -105,10 +105,10 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES ag_pus_sub_turtlesim_pose_and_move
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime    ## TAMBAH ini
-  DEPENDS system_lib
+#  INCLUDE_DIRS include
+#  LIBRARIES ag_pus_sub_turtlesim_pose_and_move
+#  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime    ## TAMBAH ini
+#  DEPENDS system_lib
 )
 
 ###########
