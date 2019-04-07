@@ -12,6 +12,11 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   cv_bridge
+  message_generation
+  actionlib_msgs
+  
+  # tambah image_transport untuk contoh latihan af_pub_sub_cvbridge_ros.cpp
+  image_transport
 )
 
 ## System dependencies are found with CMake's conventions
@@ -121,6 +126,23 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+
+
+find_package(OpenCV)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+add_executable(af_read_video_cpp  src/af_read_video.cpp)
+target_link_libraries(af_read_video_cpp ${catkin_LIBRARIES})
+target_link_libraries(af_read_video_cpp ${OpenCV_LIBRARIES})
+
+add_executable(af_open_copy_cpp  src/af_open_copy.cpp)
+target_link_libraries(af_open_copy_cpp ${catkin_LIBRARIES})
+target_link_libraries(af_open_copy_cpp ${OpenCV_LIBRARIES})
+
+add_executable(af_pub_sub_cvbridge_ros_cpp  src/af_pub_sub_cvbridge_ros.cpp)
+target_link_libraries(af_pub_sub_cvbridge_ros_cpp ${catkin_LIBRARIES})
+target_link_libraries(af_pub_sub_cvbridge_ros_cpp ${OpenCV_LIBRARIES})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/af_opencv_cvbridge_ros.cpp
@@ -145,6 +167,10 @@ include_directories(
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+
+
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
