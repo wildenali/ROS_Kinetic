@@ -1,0 +1,6 @@
+<launch>
+  <node name="bc_publisher_python" pkg="bc_publisher_python" type="bc_publisher_py.py" output="screen"/>
+  <node name="bd_subscriber_python" pkg="bd_subscriber_python" type="bd_subscriber_py.py" output="screen"/>
+  <node name="be_publisher_cpp_node" pkg="be_publisher_cpp" type="be_publisher_cpp_node" output="screen"/>
+  <node name="bf_subscriber_cpp_node" pkg="bf_subscriber_cpp" type="bf_subscriber_cpp_node" output="screen"/>
+</launch>
