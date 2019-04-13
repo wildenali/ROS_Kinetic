@@ -18,7 +18,7 @@ def image_callback(ros_image):
         cv_image = bridge.imgmsg_to_cv2(ros_image,"bgr8")
     except CvBridgeError as e:
         print(e)
-    
+
     # from now on, you can work exactly like with opencv
     (rows,cols,channels) = cv_image.shape
     if cols > 200 and rows > 200:
@@ -30,7 +30,7 @@ def image_callback(ros_image):
 
 def main(args):
     rospy.init_node('image_converter', anonymous=True)
-    
+
     # for turtlebot3 waffle
     # image_topic = "/camera/rgb/image_raw/compressed"
 
