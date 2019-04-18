@@ -12,10 +12,13 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+
+  actionlib
+  actionlib_msgs
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -117,8 +120,9 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
+ include
+ ${catkin_INCLUDE_DIRS}
+ ${Boost_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -135,6 +139,15 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/bb_my_robot_tutorials_node.cpp)
+
+add_executable(count_until_server_node src/count_until_server.cpp)
+target_link_libraries(count_until_server_node ${catkin_LIBRARIES})
+
+add_executable(count_until_client_node src/count_until_client.cpp)
+target_link_libraries(count_until_client_node ${catkin_LIBRARIES})
+
+#add_dependencies(count_until_server_node my_robot_msgs_generate_messages_cpp)
+#add_dependencies(count_until_client_node my_robot_msgs_generate_messages_cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
