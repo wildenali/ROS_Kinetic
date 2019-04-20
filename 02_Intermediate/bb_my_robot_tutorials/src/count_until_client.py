@@ -35,7 +35,7 @@ class CountUntilClient:
         # ========== Cancel Goal ==========
         rospy.sleep(2)
         self._ac.cancel_goal()
-
+        rospy.loginfo("Send cancel request")
 
 
     # ====== cara supaya ada callback dari server =======
