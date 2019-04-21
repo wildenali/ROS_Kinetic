@@ -152,6 +152,15 @@ target_link_libraries(move_robot_server_node ${catkin_LIBRARIES})
 add_executable(move_robot_client_node src_section3/move_robot_client.cpp)
 target_link_libraries(move_robot_client_node ${catkin_LIBRARIES})
 
+#add_executable(activity_action_server_node src_section5/activity_action_server.cpp)
+#target_link_libraries(activity_action_server_node ${catkin_LIBRARIES})
+
+#add_executable(activity_action_server_queue_node src_section5/activity_action_server_queue.cpp)
+#target_link_libraries(activity_action_server_queue_node ${catkin_LIBRARIES})
+
+#add_executable(activity_action_client_node src_section5/activity_action_client.cpp)
+#target_link_libraries(activity_action_client_node ${catkin_LIBRARIES})
+
 #add_dependencies(count_until_server_node my_robot_msgs_generate_messages_cpp)
 #add_dependencies(count_until_client_node my_robot_msgs_generate_messages_cpp)
 
