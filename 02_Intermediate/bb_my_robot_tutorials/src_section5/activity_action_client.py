@@ -19,7 +19,7 @@ class CountUntilClient:
             if self._goal_handles[i] == goal_handle:
                 index = i
                 break
-        rospy.loginfo("--- INI Transition callback")
+        rospy.loginfo(str(index) + "--- INI Transition callback")
 
         # rospy.loginfo(goal_handle.get_comm_state())
         # rospy.loginfo(goal_handle.get_goal_status())
@@ -58,10 +58,12 @@ if __name__ == '__main__':
     goal_handle1 = client.send_goal(6 ,0.5)        # kenapa 6, karena itu dari nilai maksimal dari file2 yg lain coba cekcek ricek
     client._goal_handles['1'] = goal_handle1
 
-    goal_handle2 = client.send_goal(5 ,0.5)
-    client._goal_handles['1'] = goal_handle3
+    rospy.sleep(1.5)  # goal policy
 
-    rospy.sleep(1.0)
-    goal_handle1.cancel()
+    goal_handle2 = client.send_goal(5 ,0.5)
+    client._goal_handles['1'] = goal_handle2
+
+    # rospy.sleep(1.0)
+    # goal_handle1.cancel()
 
     rospy.spin()
