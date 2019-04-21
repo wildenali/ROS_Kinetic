@@ -58,10 +58,17 @@ if __name__ == '__main__':
     goal_handle1 = client.send_goal(6 ,0.5)        # kenapa 6, karena itu dari nilai maksimal dari file2 yg lain coba cekcek ricek
     client._goal_handles['1'] = goal_handle1
 
-    rospy.sleep(1.5)  # goal policy
+    # rospy.sleep(1.5)  # goal policy
 
     goal_handle2 = client.send_goal(5 ,0.5)
     client._goal_handles['1'] = goal_handle2
+
+    # ==== untuk mengetest activity_action_server_queue.py
+    client.send_goal(4, 0.8)
+    client.send_goal(3, 0.8)
+    client.send_goal(4, 0.8)
+    # ==== untuk mengetest activity_action_server_queue.py
+
 
     # rospy.sleep(1.0)
     # goal_handle1.cancel()

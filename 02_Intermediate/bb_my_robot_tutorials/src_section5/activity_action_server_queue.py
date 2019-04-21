@@ -18,6 +18,19 @@ class CountUntilServer:
         rospy.loginfo("Action Server has been started.")
         # self._cancel_request = False
         self._cancel_goals = {}
+        self._goal_queue = []
+        w = threading.Thread(name="queue_worker", target=self.run_queue)
+        w.start()
+        rospy.loginfo("Run queue has been started")
+
+    def run_queue(self):
+        rate = rospy.Rate(2.0)
+        while not rospy.is_shutdown():
+            rate.sleep()
+            if len(self._goal_queue) > 0:
+                self.process_goal(self._goal_queue.pop(0))
+            else:
+                rospy.loginfo("Not doing anything")
 
 
     def process_goal(self, goal_handle):
@@ -82,23 +95,20 @@ class CountUntilServer:
         rospy.loginfo("Received new goal")
         rospy.loginfo(goal_handle.get_goal())
 
-        # ==== goal policy only one goal active
-        if len(self._cancel_goals) != 0:
-            rospy.logwarn("A goal already exists! Reject new goal")
-            result = CountUntilResult()
-            result.count = -1000
-            goal_handle.set_rejected(result)
-            return
-        # ==== goal policy only one goal active
+        # # ==== goal policy only one goal active
+        # if len(self._cancel_goals) != 0:
+        #     rospy.logwarn("A goal already exists! Reject new goal")
+        #     result = CountUntilResult()
+        #     result.count = -1000
+        #     goal_handle.set_rejected(result)
+        #     return
+        # # ==== goal policy only one goal active
 
-
+        # ==== goal policy with queue
+        self._goal_queue.append(goal_handle)
         self._cancel_goals[goal_handle.get_goal_id()] = False
-        rospy.loginfo("List of goals:")
-        rospy.loginfo(self._cancel_goals)
+        # ==== goal policy with queue
 
-        w = threading.Thread(name="worker", target=self.process_goal, args=(goal_handle,))
-        w.start()
-        # self.process_goal(goal_handle)
 
     def on_cancel(self, goal_handle):
         rospy.loginfo("Received cancel request")
