@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="ca_robotics_course" type="coffe_pub.py" name="coffe_pub"/>
+  <node pkg="ca_robotics_course" type="coffe_sub_pub.py" name="coffe_sub_pub"/>
+  <node pkg="ca_robotics_course" type="coffe_sub.py" name="coffe_sub" output="screen"/>
+
+</launch>
