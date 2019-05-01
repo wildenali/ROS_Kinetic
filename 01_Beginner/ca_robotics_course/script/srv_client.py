@@ -15,8 +15,8 @@ def usage():
     return "%s [x y]" %sys.argv[0]
 
 def security_verifying():
-    # pub = rospy.Publisher('/turtle1/cmd_vel', Twist)
-    pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+    # pub = rospy.Publisher('/turtle1/cmd_vel', Twist)          # ini pakai turtlesim
+    pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)     # ini pakai turtlebot3
     rospy.sleep(1)
     r = rospy.Rate(5)
     while not rospy.is_shutdown():
