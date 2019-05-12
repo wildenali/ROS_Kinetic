@@ -35,7 +35,7 @@ def main(args):
     # image_topic = "/camera/rgb/image_raw/compressed"
 
     # usb cam
-    # image_topic = "/usb_cam/image_raw"
+    image_topic = "/usb_cam/image_raw"
     image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, image_callback)
 
     try:

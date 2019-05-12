@@ -17,7 +17,7 @@ def main(args):
     # image_topic = "/camera/rgb/image_raw/compressed"
 
     # for usb cam
-    # image_topic = "/usb_cam/image_raw"
+    image_topic = "/usb_cam/image_raw"
     image_pub = rospy.Publisher("ball_image", Image, queue_size=10)
 
     video_capture = cv2.VideoCapture(0)
@@ -32,6 +32,6 @@ def main(args):
             print(e)
         image_pub.publish(ros_image)
         rate.sleep()
-    
+
 if __name__ == "__main__":
     main(sys.argv)

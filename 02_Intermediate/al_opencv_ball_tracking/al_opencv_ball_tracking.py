@@ -50,9 +50,14 @@ def get_contour_center(contour):
     if (M['m00'] != 0):
         cx = int(M['m10']/M['m00'])
         cy = int(M['m01']/M['m00'])
+    print(cx, cy)
     return cx, cy
 
 def detect_ball_in_a_frame(image_frame):
+    # yellowLower = (30, 100, 50)
+    # yellowUpper = (30, 255, 255)
+    # yellowLower = (0, 40, 140)
+    # yellowUpper = (20, 80, 185)
     yellowLower = (30, 100, 50)
     yellowUpper = (30, 255, 255)
     rgb_image = image_frame
@@ -70,6 +75,7 @@ def main():
         # detect_ball_in_a_frame(frame)
         detect_ball_in_a_frame(frame)
         # time.sleep(0.033)
+        # time.sleep(0.1)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 

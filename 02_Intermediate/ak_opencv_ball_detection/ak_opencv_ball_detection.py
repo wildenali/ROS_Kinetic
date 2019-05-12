@@ -53,6 +53,7 @@ def get_contour_center(contour):
     if (M['m00'] != 0):
         cx = int(M['m10']/M['m00'])
         cy = int(M['m01']/M['m00'])
+    print(cx, cy)
     return cx, cy
 
 def main():
